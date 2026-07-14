@@ -3,44 +3,55 @@
 Sito del viaggio 8–14 agosto 2026: itinerario giorno per giorno, mappe, schede dei luoghi
 con foto e countdown all'eclissi totale del 12 agosto (totalità 20:31, Sa Foradada).
 
-## Struttura
+Sito statico: nessuna build, nessuna dipendenza da installare. Si apre `index.html` e funziona.
+
+## Le pagine
 
 ```
-index.html      → pagina principale (hero, sommario, programma, checklist)
-css/style.css   → stile
-js/data.js      → dati del viaggio: giorni, tappe, luoghi, foto, valutazioni
-js/app.js       → rendering, mappe Leaflet, scheda luogo, countdown
+index.html      → home: hero, "in breve", mappa d'insieme di tutto il viaggio
+programma.html  → i 7 giorni: punto di partenza, tappe e mappa di ogni giornata
+luoghi.html     → catalogo delle schede, filtrabile per giornata
+checklist.html  → prenotazioni, acquisti, verifiche e kit del giorno X
 ```
+
+## Il codice
+
+```
+css/style.css   → tutto lo stile (tema chiaro; l'unica zona scura è l'hero)
+js/data.js      → i dati del viaggio: LUOGHI, GIORNI, CHECKLIST
+js/core.js      → funzioni condivise: mappe Leaflet, scheda luogo, countdown
+js/home.js      → stelle dell'hero, countdown grande, mappa d'insieme
+js/programma.js → le card delle giornate e le mappe giornaliere
+js/luoghi.js    → griglia dei luoghi e filtri
+js/checklist.js → spunte e avanzamento (salvati nel browser)
+```
+
+## Modificare il viaggio
+
+Tutto vive in `js/data.js`:
+
+- `LUOGHI` → le schede dei posti: nome, coordinate, valutazione, punti "da sapere", foto.
+- `GIORNI` → le giornate. Ognuna ha una `partenza` (da dove si muove quel giorno) e le `tappe`.
+  Una tappa può puntare a un luogo del catalogo (`luogo:'calomoro'`) ed eredita nome e coordinate,
+  oppure essere una voce libera (`nome:'...'`, con `lat`/`lng` opzionali per finire sulla mappa).
+  Il campo `colore` è la tinta con cui la giornata appare sulla mappa d'insieme.
+- `CHECKLIST` → i gruppi di voci da spuntare. **Attenzione all'`id` di ogni voce**: è la chiave con
+  cui la spunta viene salvata nel browser, quindi cambiarlo dopo la pubblicazione azzera quella spunta.
 
 ## Pubblicare su GitHub Pages
 
-1. Crea un repository su github.com (es. `missione-eclissi`), pubblico.
-2. Carica questi file (via web: **Add file → Upload files**, trascina tutto mantenendo le cartelle).
-3. Vai su **Settings → Pages → Build and deployment**: Source = *Deploy from a branch*,
-   Branch = `main`, cartella `/ (root)` → **Save**.
-4. Dopo ~1 minuto il sito è su `https://TUOUSERNAME.github.io/missione-eclissi/`.
+Repository: <https://github.com/AleSpirobeep/missioneeclissi>
 
-Da terminale, in alternativa:
-
-```bash
-cd missione-eclissi
-git init && git add -A && git commit -m "Missione Eclissi"
-git branch -M main
-git remote add origin https://github.com/TUOUSERNAME/missione-eclissi.git
-git push -u origin main
-# poi attiva Pages da Settings → Pages
-```
-
-## Modificare l'itinerario
-
-Tutto vive in `js/data.js`:
-- `LUOGHI` → schede dei posti (nome, coordinate, valutazione, punti "da sapere", foto).
-- `GIORNI` → le giornate; ogni tappa può puntare a un luogo (`luogo:'calomoro'`)
-  oppure essere una voce semplice (`nome:'...'`, con `lat/lng` opzionali per la mappa).
+Da **Settings → Pages → Build and deployment**: Source = *Deploy from a branch*,
+Branch = `main`, cartella `/ (root)` → **Save**.
+Dopo circa un minuto il sito è su `https://alespirobeep.github.io/missioneeclissi/`.
 
 ## Note
 
-- Mappe: Leaflet + tile CARTO (gratuiti, attribuzione inclusa). Nessuna API key richiesta.
-- Le foto sono servite direttamente da Google Maps con credito all'autore; se una foto
-  smette di funzionare, la scheda la nasconde automaticamente.
+- Mappe: Leaflet + tile CARTO Voyager (chiare, con il mare azzurro). Gratuite, attribuzione
+  inclusa, nessuna API key richiesta.
+- Le spunte della checklist vivono in `localStorage`: restano su quel dispositivo e su quel
+  browser, non si sincronizzano tra telefono e computer.
+- Le foto sono servite direttamente da Google Maps con credito all'autore; se una foto smette
+  di funzionare, la scheda la nasconde automaticamente.
 - Le valutazioni (es. 4.6 · 9.212 recensioni) sono una fotografia a luglio 2026.

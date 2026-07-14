@@ -1,0 +1,6 @@
+# impostazioni locali dell'editor / dell'assistente
+.claude/
+
+# sistema
+Thumbs.db
+.DS_Store

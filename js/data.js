@@ -288,49 +288,129 @@ const LUOGHI = {
   }
 };
 
-/* ---------- GIORNI ---------- */
+/* ---------- GIORNI ----------
+   Ogni giornata ha un punto di partenza (`partenza`), che apre mappa e racconto:
+   può puntare a un luogo del catalogo (`luogo:'hotel1'`) oppure essere un punto
+   libero (`nome` + `lat`/`lng`).
+   `colore` è la tinta del giorno sulla mappa d'insieme in home.
+   ------------------------------------------------------------ */
 const GIORNI = [
- {id:'g1',data:'Sabato 8 agosto',titolo:'Si parte',zona:'Napoli → Sud',mappa:false,tappe:[
+ {id:'g1',data:'Sabato 8 agosto',titolo:'Si parte',zona:'Napoli → Sud',mappa:true,colore:'#e07a2f',
+  partenza:{ora:'21:40',nome:'Aeroporto di Palma',lat:39.5517,lng:2.7388,nota:'Atterraggio, bagagli e ritiro dell’auto.'},
+  tappe:[
    {ora:'19:45',nome:'Volo Napoli → Palma',nota:'Wizz Air, atterraggio 21:40, due bagagli in stiva. Ritiro auto: una BMW ci aspetta.'},
-   {ora:'22:45',luogo:'hotel1',nota:'Base 1 · fronte mare a Colònia de Sant Jordi, tre notti.',drive:'~40 min dall\u2019aeroporto'},
+   {ora:'22:45',luogo:'hotel1',nota:'Base 1 · fronte mare a Colònia de Sant Jordi, tre notti.',drive:'~40 min dall’aeroporto'},
  ]},
- {id:'g2',data:'Domenica 9 agosto',titolo:'Le calette del sud',zona:'Santanyí',mappa:true,tappe:[
-   {ora:'08:30',luogo:'calomoro',nota:'Prima delle 9 o niente: parcheggio scarso e discesa ripida, ma quell\u2019acqua ripaga tutto.',drive:'15 min dall\u2019hotel'},
+ {id:'g2',data:'Domenica 9 agosto',titolo:'Le calette del sud',zona:'Santanyí',mappa:true,colore:'#0f8ea6',
+  partenza:{ora:'08:00',luogo:'hotel1',nota:'Sveglia presto: sulle calette del sud vince chi arriva prima.'},
+  tappe:[
+   {ora:'08:30',luogo:'calomoro',nota:'Prima delle 9 o niente: parcheggio scarso e discesa ripida, ma quell’acqua ripaga tutto.',drive:'15 min dall’hotel'},
    {ora:'10:30',luogo:'salmunia',nota:'A piedi dalla precedente. Piscina naturale e tuffi dagli scogli.'},
    {ora:'11:45',luogo:'llombards',nota:'Sabbia, lettini, decompressione.',drive:'6 min'},
    {ora:'13:30',luogo:'drac',nota:'Terrazza sospesa su Cala Santanyí: gambas, Aperol e uccellini ladri di patatine.',drive:'5 min'},
    {ora:'16:30',luogo:'estrenc',nota:'Il Caribe di Maiorca a 10 minuti da casa. Zero ombra: ombrellone nostro.',drive:'25 min'},
-   {ora:'21:00',nome:'Cena a Colònia de Sant Jordi',nota:'Pesce fresco sul porto, a piedi dall\u2019hotel.'},
+   {ora:'21:00',nome:'Cena a Colònia de Sant Jordi',lat:39.3163,lng:2.9926,nota:'Pesce fresco sul porto, a piedi dall’hotel.'},
  ]},
- {id:'g3',data:'Lunedì 10 agosto',titolo:'Mondragó + Cala d\u2019Or',zona:'Parco naturale',mappa:true,tappe:[
-   {ora:'09:00',luogo:'amarador',nota:'Parcheggio "S\u2019Amarador · Parc Mondragó" (5\u20ac), non fidarsi del navigatore fino in spiaggia.',drive:'25 min dall\u2019hotel'},
+ {id:'g3',data:'Lunedì 10 agosto',titolo:'Mondragó + Cala d’Or',zona:'Parco naturale',mappa:true,colore:'#2e9e63',
+  partenza:{ora:'08:30',luogo:'hotel1',nota:'Colazione in hotel, poi rotta a est verso il parco naturale.'},
+  tappe:[
+   {ora:'09:00',luogo:'amarador',nota:'Parcheggio "S’Amarador · Parc Mondragó" (5€), non fidarsi del navigatore fino in spiaggia.',drive:'25 min dall’hotel'},
    {ora:'11:00',luogo:'mondrago',nota:'Il nostro trekking: sentiero costiero tra le due cale, bagno a metà strada.'},
    {ora:'13:30',luogo:'sanau',nota:'Pranzo di pesce al chiringuito, spesso musica live.',drive:'20 min'},
    {ora:'16:30',luogo:'esmeralda',nota:'Il nome dice tutto. Telo e ultimo bagno del giorno.',drive:'10 min'},
-   {ora:'20:30',nome:'Cala d\u2019Or',lat:39.3705,lng:3.2299,nota:'Cena e serata: Eden e Garash The Terrace. Rientro in 25 min.'},
+   {ora:'20:30',nome:'Cala d’Or',lat:39.3705,lng:3.2299,nota:'Cena e serata: Eden e Garash The Terrace. Rientro in 25 min.'},
  ]},
- {id:'g4',data:'Martedì 11 agosto',titolo:'Trasferimento con stile',zona:'Sud → Inca',mappa:true,tappe:[
-   {ora:'11:00',nome:'Check-out e rotta a ovest',nota:'Bagagli in macchina, si cambia anima dell\u2019isola.'},
+ {id:'g4',data:'Martedì 11 agosto',titolo:'Trasferimento con stile',zona:'Sud → Inca',mappa:true,colore:'#8a5cc7',
+  partenza:{ora:'11:00',luogo:'hotel1',nota:'Check-out: bagagli in macchina, si cambia anima dell’isola.'},
+  tappe:[
    {ora:'13:00',luogo:'seaclub',nota:'Fortezza sul mare, ti portano giù in golf cart. È letteralmente sulla strada per Palma.',drive:'35 min'},
-   {ora:'17:30',luogo:'cattedrale',nota:'La Seu nella luce dorata. Per l\u2019interno biglietti online (chiude 17:15: nel caso, invertire col Sea Club).',drive:'25 min'},
-   {ora:'20:30',nome:'Cena a Palma',nota:'Casco antiguo, cucina mallorquina.'},
+   {ora:'17:30',luogo:'cattedrale',nota:'La Seu nella luce dorata. Per l’interno biglietti online (chiude 17:15: nel caso, invertire col Sea Club).',drive:'25 min'},
+   {ora:'20:30',nome:'Cena a Palma',lat:39.5696,lng:2.6502,nota:'Casco antiguo, cucina mallorquina.'},
    {ora:'22:30',luogo:'savinya',nota:'Base 2 · vigneti di Inca, tre notti. Maria è avvisata del nostro orario.',drive:'30 min'},
  ]},
- {id:'g5',data:'Mercoledì 12 agosto',titolo:'Il giorno dell\u2019eclissi',zona:'Tramuntana',eclisse:true,mappa:true,tappe:[
+ {id:'g5',data:'Mercoledì 12 agosto',titolo:'Il giorno dell’eclissi',zona:'Tramuntana',eclisse:true,mappa:true,colore:'#d63f4a',
+  partenza:{ora:'09:30',luogo:'savinya',nota:'Il giorno è questo. Si sale sulla Tramuntana con calma e largo anticipo.'},
+  tappe:[
    {ora:'10:00',luogo:'valldemossa',nota:'Il borgo di Chopin: coca de patata, caffè e stradine in pietra.',drive:'30 min da Inca'},
    {ora:'13:30',luogo:'patro',nota:'Pranzo sulla scogliera di Cala Deià. Si parcheggia sopra e si scende a piedi. Bagno incluso.',badge:'PRENOTATO?',drive:'25 min'},
    {ora:'17:30',luogo:'foradada',nota:'Posizionamento. Da qui in poi, il cielo fa tutto da solo.',badge:'ORA X',drive:'10 min'},
-   {ora:'21:30',luogo:'olivo',nota:'Cena delle grandi occasioni a 10 minuti, mentre l\u2019isola intera è in coda.',drive:'10 min'},
+   {ora:'21:30',luogo:'olivo',nota:'Cena delle grandi occasioni a 10 minuti, mentre l’isola intera è in coda.',drive:'10 min'},
  ]},
- {id:'g6',data:'Giovedì 13 agosto',titolo:'Il nord',zona:'Formentor · Muro',mappa:true,tappe:[
-   {ora:'08:30',nome:'Port de Pollença → navetta',lat:39.9086,lng:3.0810,nota:'La strada del faro d\u2019estate è chiusa alle auto: si sale in bus navetta.',drive:'35 min da Inca'},
+ {id:'g6',data:'Giovedì 13 agosto',titolo:'Il nord',zona:'Formentor · Muro',mappa:true,colore:'#2472c8',
+  partenza:{ora:'07:55',luogo:'savinya',nota:'Partenza all’alba: la navetta del faro e la luce del mattino non aspettano.'},
+  tappe:[
+   {ora:'08:30',nome:'Port de Pollença → navetta',lat:39.9086,lng:3.0810,nota:'La strada del faro d’estate è chiusa alle auto: si sale in bus navetta.',drive:'35 min da Inca'},
    {ora:'09:30',luogo:'formentor',nota:'Il faro in capo al mondo, a picco sul blu.'},
    {ora:'14:00',luogo:'muro',nota:'Sabbia bianca, fondale basso, il molo di legno da cartolina.',drive:'30 min'},
-   {ora:'20:30',nome:'Celler a Inca + vino di casa',nota:'Cena nella tradizione più vera di Inca; prima, degustazione del vino dell\u2019agroturismo tra i filari.'},
+   {ora:'20:30',nome:'Celler a Inca + vino di casa',lat:39.7211,lng:2.9107,nota:'Cena nella tradizione più vera di Inca; prima, degustazione del vino dell’agroturismo tra i filari.'},
  ]},
- {id:'g7',data:'Venerdì 14 agosto',titolo:'Rotta su Ibiza',zona:'Palma → mare',mappa:false,tappe:[
-   {ora:'07:45',nome:'Partenza da Inca',nota:'Colazione veloce, valigie, si chiude il cerchio.'},
+ {id:'g7',data:'Venerdì 14 agosto',titolo:'Rotta su Ibiza',zona:'Palma → mare',mappa:true,colore:'#6b7c8a',
+  partenza:{ora:'07:45',luogo:'savinya',nota:'Colazione veloce, valigie, si chiude il cerchio.'},
+  tappe:[
    {ora:'08:45',luogo:'porto',nota:'Riconsegna auto e imbarco.',drive:'35 min'},
-   {ora:'10:00',nome:'Traghetto per Ibiza',nota:'Capitolo due della missione. Si salpa.'},
+   {ora:'10:00',nome:'Traghetto per Ibiza',lat:39.5528,lng:2.6267,nota:'Capitolo due della missione. Si salpa.'},
+ ]},
+];
+
+/* ---------- CHECKLIST ----------
+   Gruppi di voci spuntabili. Ogni voce ha un `id` stabile: è la chiave con cui
+   la spunta viene salvata nel browser (localStorage). Una volta pubblicato,
+   cambiare un `id` significa perdere la spunta corrispondente.
+   ------------------------------------------------------------ */
+const CHECKLIST = [
+ {gruppo:'Prenotazioni', nota:'Le mosse che decidono la missione.', voci:[
+   {id:'pren-patro', t:'Ca’s Patró March · pranzo mer 12', scad:'notte del 2 agosto',
+    n:'Le prenotazioni aprono online a mezzanotte esatta, 10 giorni prima. Sveglia puntata: è il tavolo più conteso dell’isola.'},
+   {id:'pren-olivo', t:'El Olivo · cena mer 12, ore 21:30', scad:'al più presto',
+    n:'Il brindisi post-eclissi mentre il traffico defluisce. Belmond La Residencia: si prenota con largo anticipo.'},
+   {id:'pren-seaclub', t:'Sea Club Cap Rocat · mar 11', scad:'entro luglio',
+    n:'Day pass o tavolo: ad agosto senza prenotazione non si entra.'},
+   {id:'pren-cattedrale', t:'Cattedrale di Palma · biglietti online', scad:'entro luglio',
+    n:'Chiude alle 17:15: se il Sea Club sfora, invertire l’ordine delle due tappe.'},
+   {id:'pren-celler', t:'Celler a Inca · cena gio 13',
+    n:'Cucina mallorquina tradizionale: i cellers storici si riempiono.'},
+   {id:'pren-degustazione', t:'Degustazione vino a Sa Vinya des Convent',
+    n:'Da concordare con Maria e Xavier: producono il loro vino, si assaggia in cantina.'},
+ ]},
+ {gruppo:'Da comprare', nota:'Meglio adesso che a Palma il 12 agosto.', voci:[
+   {id:'buy-occhiali', t:'Occhiali eclissi ISO 12312-2 × 2', scad:'subito',
+    n:'Certificazione obbligatoria per tutte le fasi parziali. Ad agosto saranno introvabili ovunque.'},
+   {id:'buy-filtro', t:'Filtro solare per fotocamera',
+    n:'Senza filtro il sensore si rovina. Durante la totalità (1′36″) invece si guarda e si scatta a occhio nudo.'},
+   {id:'buy-scarpe', t:'Scarpe da scoglio',
+    n:'Caló des Moro e s’Almunia sono rocce e gradini ripidi: i piedi ringraziano.'},
+   {id:'buy-ombrellone', t:'Ombrellone per Es Trenc',
+    n:'La spiaggia non ha un filo d’ombra naturale.'},
+   {id:'buy-powerbank', t:'Powerbank e supporto da auto',
+    n:'Mappe, foto e countdown mangiano batteria.'},
+ ]},
+ {gruppo:'Da verificare', nota:'I dettagli che possono far saltare il banco.', voci:[
+   {id:'ver-auto', t:'Riconsegna auto al porto di Palma', scad:'entro luglio',
+    n:'Il traghetto parte alle 10:00 di ven 14: confermare col noleggio che la riconsegna al porto sia possibile e a che ora apre l’ufficio.'},
+   {id:'ver-navetta', t:'Navetta Cap de Formentor · orari 2026',
+    n:'D’estate la strada del faro è chiusa alle auto private di giorno: si sale in bus da Port de Pollença.'},
+   {id:'ver-checkin', t:'Check-in online Wizz Air', scad:'da 48h prima',
+    n:'Volo di sab 8, 19:45 da Napoli. Due bagagli da 20 kg in stiva.'},
+   {id:'ver-traghetto', t:'Biglietti traghetto Palma → Ibiza',
+    n:'Ven 14 ore 10:00. Al terminal almeno un’ora prima.'},
+   {id:'ver-meteo', t:'Meteo e nuvolosità · dal 5 agosto',
+    n:'Se il 12 il cielo a ovest si annuvola, serve un piano B lungo la costa.'},
+ ]},
+ {gruppo:'Il giorno X', nota:'Mercoledì 12 agosto · totalità alle 20:31.', voci:[
+   {id:'x-arrivo', t:'A Sa Foradada entro le 17:30',
+    n:'Il parcheggio è piccolo e quel giorno mezza isola punta lì. Meglio tre ore d’attesa che perdere il posto.'},
+   {id:'x-kit', t:'Kit pronto: occhiali, acqua, felpa',
+    n:'Sulla falesia al tramonto rinfresca, e la temperatura crolla durante la totalità.'},
+   {id:'x-telefono', t:'Telefono carico e memoria libera',
+    n:'Primo contatto 19:38 · totalità 20:31 · ultimo contatto 20:49.'},
+   {id:'x-guardare', t:'Durante la totalità: occhiali giù, e guardare',
+    n:'96 secondi. Nessuna foto vale quanto vederla davvero.'},
+ ]},
+ {gruppo:'Documenti', voci:[
+   {id:'doc-identita', t:'Carta d’identità o passaporto'},
+   {id:'doc-patente', t:'Patente per il noleggio',
+    n:'L’intestatario della prenotazione dev’essere presente al ritiro, con la sua carta di credito.'},
+   {id:'doc-tessera', t:'Tessera sanitaria europea (TEAM)'},
+   {id:'doc-voucher', t:'Voucher hotel, auto e traghetto salvati offline'},
  ]},
 ];

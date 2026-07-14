@@ -7,14 +7,25 @@
 <meta name="description" content="Mallorca 8–14 agosto 2026: sette giorni verso l'eclissi totale di sole a Sa Foradada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Karla:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Karla:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="home">
+
+<header class="topbar">
+  <a class="brand" href="index.html">Missione <em>Eclissi</em></a>
+  <div class="mini-cd" id="mini-cd">–</div>
+  <nav class="mainnav" aria-label="Sezioni del sito">
+    <a href="index.html" data-nav="home">Home</a>
+    <a href="programma.html" data-nav="programma">Programma</a>
+    <a href="luoghi.html" data-nav="luoghi">Luoghi</a>
+    <a href="checklist.html" data-nav="checklist">Checklist</a>
+  </nav>
+</header>
 
 <!-- ============ HERO ============ -->
-<header class="hero" id="top">
+<section class="hero" id="top">
   <div class="stars" id="stars"></div>
 
   <div class="cielo" aria-hidden="true">
@@ -49,23 +60,11 @@
     </div>
     <div class="cd-nota" id="cd-nota">alla totalità · 12.08.2026 · 20:31 · Sa Foradada</div>
   </div>
-</header>
-
-<!-- ============ NAV ============ -->
-<nav class="daynav" aria-label="Giorni del viaggio">
-  <a class="chip" href="#sommario">In breve</a>
-  <a class="chip" href="#g1">Sab 8</a>
-  <a class="chip" href="#g2">Dom 9</a>
-  <a class="chip" href="#g3">Lun 10</a>
-  <a class="chip" href="#g4">Mar 11</a>
-  <a class="chip eclisse" href="#g5">Mer 12 ●</a>
-  <a class="chip" href="#g6">Gio 13</a>
-  <a class="chip" href="#g7">Ven 14</a>
-</nav>
+</section>
 
 <main>
   <!-- ============ SOMMARIO ============ -->
-  <div class="intro-riga" style="margin-top:0"><h2>In breve</h2><span>la missione a colpo d'occhio</span></div>
+  <div class="intro-riga"><h2>In breve</h2><span>la missione a colpo d'occhio</span></div>
   <section class="sommario" id="sommario">
     <div class="som-grid">
       <div class="som-cella">
@@ -78,7 +77,7 @@
       </div>
       <div class="som-cella">
         <div class="k">Base 1 · notti 8–11</div>
-        <div class="v">Universal Grand León & Spa<small>Colònia de Sant Jordi · fronte mare, spa, a 10 min da Es Trenc</small></div>
+        <div class="v">Universal Grand León &amp; Spa<small>Colònia de Sant Jordi · fronte mare, spa, a 10 min da Es Trenc</small></div>
       </div>
       <div class="som-cella">
         <div class="k">Base 2 · notti 11–14</div>
@@ -94,43 +93,39 @@
       </div>
     </div>
     <div class="som-giorni">
-      <div class="som-riga"><b>SAB 8</b><span><strong>Arrivo.</strong> Volo serale, auto, notte a Colònia de Sant Jordi.</span></div>
-      <div class="som-riga"><b>DOM 9</b><span><strong>Calette del sud.</strong> Caló des Moro e s'Almunia all'alba, Llombards, pranzo al Cafè Drac, pomeriggio a Es Trenc.</span></div>
-      <div class="som-riga"><b>LUN 10</b><span><strong>Mondragó.</strong> Trekking costiero s'Amarador ↔ Mondragó, pesce a Cala Sa Nau, Cala Esmeralda, serata a Cala d'Or.</span></div>
-      <div class="som-riga"><b>MAR 11</b><span><strong>Cambio base.</strong> Sea Club di Cap Rocat, Cattedrale di Palma al tramonto, cena in città, notte a Inca.</span></div>
-      <div class="som-riga"><b>MER 12</b><span><strong>ECLISSI.</strong> Valldemossa, pranzo a Ca's Patró March, totalità alle 20:31 da Sa Foradada, cena a El Olivo.</span></div>
-      <div class="som-riga"><b>GIO 13</b><span><strong>Il nord.</strong> Faro di Formentor in navetta, pomeriggio a Platja de Muro, celler a Inca.</span></div>
-      <div class="som-riga"><b>VEN 14</b><span><strong>Si salpa.</strong> Porto di Palma entro le 8:45, traghetto delle 10:00 per Ibiza.</span></div>
+      <div class="som-riga"><b>SAB 8</b><span><a href="programma.html#g1"><strong>Arrivo.</strong> Volo serale, auto, notte a Colònia de Sant Jordi.</a></span></div>
+      <div class="som-riga"><b>DOM 9</b><span><a href="programma.html#g2"><strong>Calette del sud.</strong> Caló des Moro e s'Almunia all'alba, Llombards, pranzo al Cafè Drac, pomeriggio a Es Trenc.</a></span></div>
+      <div class="som-riga"><b>LUN 10</b><span><a href="programma.html#g3"><strong>Mondragó.</strong> Trekking costiero s'Amarador ↔ Mondragó, pesce a Cala Sa Nau, Cala Esmeralda, serata a Cala d'Or.</a></span></div>
+      <div class="som-riga"><b>MAR 11</b><span><a href="programma.html#g4"><strong>Cambio base.</strong> Sea Club di Cap Rocat, Cattedrale di Palma al tramonto, cena in città, notte a Inca.</a></span></div>
+      <div class="som-riga"><b>MER 12</b><span><a href="programma.html#g5"><strong>ECLISSI.</strong> Valldemossa, pranzo a Ca's Patró March, totalità alle 20:31 da Sa Foradada, cena a El Olivo.</a></span></div>
+      <div class="som-riga"><b>GIO 13</b><span><a href="programma.html#g6"><strong>Il nord.</strong> Faro di Formentor in navetta, pomeriggio a Platja de Muro, celler a Inca.</a></span></div>
+      <div class="som-riga"><b>VEN 14</b><span><a href="programma.html#g7"><strong>Si salpa.</strong> Porto di Palma entro le 8:45, traghetto delle 10:00 per Ibiza.</a></span></div>
     </div>
   </section>
 
-  <!-- ============ PROGRAMMA ============ -->
-  <div class="intro-riga"><h2>Il programma</h2><span>tocca un luogo per la scheda</span></div>
-  <div id="giorni"></div>
-
-  <!-- ============ PRENOTAZIONI ============ -->
-  <section class="check" id="prenotazioni">
-    <h2>Da prenotare</h2>
-    <p>Le mosse che decidono la missione. Spunta man mano.</p>
-    <label><input type="checkbox"><span><b>Ca's Patró March</b> — pranzo mer 12<small>Le prenotazioni aprono online a mezzanotte, 10 giorni prima: notte del 2 agosto, sveglia puntata.</small></span></label>
-    <label><input type="checkbox"><span><b>El Olivo</b> (Belmond La Residencia) — cena mer 12, ore 21:30<small>Il brindisi post-eclissi mentre il traffico defluisce.</small></span></label>
-    <label><input type="checkbox"><span><b>Sea Club, Cap Rocat</b> — mar 11<small>Day pass / tavolo: ad agosto va prenotato.</small></span></label>
-    <label><input type="checkbox"><span><b>Occhiali eclissi ISO 12312-2</b> × 2<small>Da comprare subito: ad agosto saranno introvabili.</small></span></label>
-    <label><input type="checkbox"><span><b>Navetta Cap de Formentor</b> — verificare orari 2026<small>La strada del faro d'estate è chiusa alle auto private di giorno.</small></span></label>
-    <label><input type="checkbox"><span><b>Riconsegna auto al porto di Palma</b> — verificare col noleggio<small>Il traghetto parte alle 10:00 di ven 14: niente sorprese.</small></span></label>
-  </section>
+  <!-- ============ MAPPA D'INSIEME ============ -->
+  <div class="intro-riga"><h2>Tutta l'isola, in un colpo solo</h2><span>ogni giorno il suo colore</span></div>
+  <div class="mappa-grande" id="mappa-tutti"></div>
+  <div class="legenda" id="legenda"></div>
+  <p class="leg-nota">Tocca un giorno per zoomare sul suo percorso. La pastiglia scura è il punto di partenza della giornata, i cerchi numerati sono le tappe in ordine.</p>
 </main>
 
 <footer>
   <p class="firma">E come sai bene,<br>the best is yet to come.</p>
+  <nav class="foot-nav">
+    <a href="programma.html">Programma</a>
+    <a href="luoghi.html">Luoghi</a>
+    <a href="checklist.html">Checklist</a>
+  </nav>
 </footer>
 
-<!-- ============ SCHEDA LUOGO ============ -->
+<!-- scheda luogo -->
 <div class="sheet-backdrop" id="sheet-backdrop"></div>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/data.js"></script>
-<script src="js/app.js"></script>
+<script src="js/core.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>

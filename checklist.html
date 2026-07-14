@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Checklist · Missione Eclissi</title>
+<meta name="description" content="Prenotazioni, acquisti, verifiche e il kit del giorno X: tutto quello che va fatto prima di partire.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Karla:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checklist">
+
+<header class="topbar">
+  <a class="brand" href="index.html">Missione <em>Eclissi</em></a>
+  <div class="mini-cd" id="mini-cd">–</div>
+  <nav class="mainnav" aria-label="Sezioni del sito">
+    <a href="index.html" data-nav="home">Home</a>
+    <a href="programma.html" data-nav="programma">Programma</a>
+    <a href="luoghi.html" data-nav="luoghi">Luoghi</a>
+    <a href="checklist.html" data-nav="checklist">Checklist</a>
+  </nav>
+</header>
+
+<main>
+  <div class="pagina-testa">
+    <div class="eyebrow">Prima di partire</div>
+    <h1>La checklist</h1>
+    <p>Le mosse che decidono la missione, divise per tipo. Le spunte restano salvate su questo dispositivo, anche se chiudi il sito.</p>
+  </div>
+
+  <div class="barra-avanzamento">
+    <div class="ba-testa">
+      <div class="ba-testo"><b id="ba-fatte">0</b> / <span id="ba-totale">0</span> <span id="ba-etichetta"></span></div>
+      <button type="button" class="ba-reset" id="ba-reset">azzera tutto</button>
+    </div>
+    <div class="ba-pista"><div class="ba-riempi" id="ba-riempi"></div></div>
+  </div>
+
+  <div id="gruppi"></div>
+</main>
+
+<footer>
+  <p class="firma">E come sai bene,<br>the best is yet to come.</p>
+  <nav class="foot-nav">
+    <a href="index.html">Home</a>
+    <a href="programma.html">Programma</a>
+    <a href="luoghi.html">Luoghi</a>
+  </nav>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/checklist.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Luoghi · Missione Eclissi</title>
+<meta name="description" content="Le schede dei luoghi del viaggio: calette, ristoranti, borghi e il mirador dell'eclissi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Karla:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="luoghi">
+
+<header class="topbar">
+  <a class="brand" href="index.html">Missione <em>Eclissi</em></a>
+  <div class="mini-cd" id="mini-cd">–</div>
+  <nav class="mainnav" aria-label="Sezioni del sito">
+    <a href="index.html" data-nav="home">Home</a>
+    <a href="programma.html" data-nav="programma">Programma</a>
+    <a href="luoghi.html" data-nav="luoghi">Luoghi</a>
+    <a href="checklist.html" data-nav="checklist">Checklist</a>
+  </nav>
+</header>
+
+<main>
+  <div class="pagina-testa">
+    <div class="eyebrow">Il catalogo</div>
+    <h1>I luoghi</h1>
+    <p>Tutto quello che tocchiamo, in un posto solo: foto, valutazioni di Google e le cose da sapere prima di arrivarci. Tocca una scheda per aprirla.</p>
+  </div>
+
+  <div class="intro-riga" style="margin-top:26px">
+    <h2>Filtra per giornata</h2><span id="conta-luoghi"></span>
+  </div>
+  <div class="filtri" id="filtri"></div>
+
+  <div class="luoghi-griglia" id="griglia"></div>
+</main>
+
+<footer>
+  <p class="firma">E come sai bene,<br>the best is yet to come.</p>
+  <nav class="foot-nav">
+    <a href="index.html">Home</a>
+    <a href="programma.html">Programma</a>
+    <a href="checklist.html">Checklist</a>
+  </nav>
+</footer>
+
+<!-- scheda luogo -->
+<div class="sheet-backdrop" id="sheet-backdrop"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
+
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/luoghi.js"></script>
+</body>
+</html>
