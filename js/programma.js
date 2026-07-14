@@ -26,19 +26,27 @@ function rigaPartenza(g){
     </div>`;
 }
 
-function rigaTappa(t){
+/* Il numero è lo stesso del pin sulla mappa: lo prendono solo le tappe
+   geolocalizzate, nello stesso ordine con cui puntiGiorno() le numera. */
+function rigaTappa(t, n){
   const nome = t.scheda
     ? `<button type="button" data-scheda="${t.scheda}">${t.nome}</button><span class="cam">▸ scheda</span>`
     : (t.lat ? `<a href="${gmaps(t.lat,t.lng)}" target="_blank" rel="noopener">${t.nome}</a>` : t.nome);
+  const numero = n ? `<span class="t-num">${n}</span>` : '<span class="t-num vuoto"></span>';
   return `
     <div class="tappa">
       <div class="t-ora">${t.ora}</div>
       <div>
-        <div class="t-nome">${nome}${t.badge?`<span class="t-badge">${t.badge}</span>`:''}</div>
+        <div class="t-nome">${numero}${nome}${t.badge?`<span class="t-badge ${t.badge==='DOCCE'?'doccia':''}">${t.badge==='DOCCE'?'✚ DOCCE':t.badge}</span>`:''}</div>
         ${t.nota?`<div class="t-nota">${t.nota}</div>`:''}
         ${t.drive?`<div class="t-drive">⇢ ${t.drive}</div>`:''}
       </div>
     </div>`;
+}
+
+function righeTappe(g){
+  let n = 0;
+  return g.tappe.map(risolvi).map(t=>rigaTappa(t, t.lat ? ++n : null)).join('');
 }
 
 const FASI = `
@@ -62,7 +70,7 @@ document.getElementById('giorni').innerHTML = GIORNI.map(g=>`
     <div class="g-body">
       ${rigaPartenza(g)}
       ${g.mappa?`<div class="g-mappa" id="mappa-${g.id}"></div>`:''}
-      ${g.tappe.map(risolvi).map(rigaTappa).join('')}
+      ${righeTappe(g)}
       ${g.eclisse?FASI:''}
     </div>
   </article>`).join('');
