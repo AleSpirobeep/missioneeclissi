@@ -273,6 +273,30 @@ const LUOGHI = {
       {u:"https://lh3.googleusercontent.com/place-photos/AG9NLjDKHAeR7gDQg7K1OSlpWoRiAdpTqzFI85-q07jsdDVwPH9ygl_8L-XVsU5SRkmkAoE7ilaghLnIuvw2rWMZC90C0rBC_PMxMrOdwdoz_OKVLMsFd_09bwM-Pxd0zVPi8FxYPKzuNmXQGS7syg=s4800-w800-h600",c:"Google Maps"}
     ]
   },
+  calasantvicenc:{
+    nome:"Cala Sant Vicenç", lat:39.9218, lng:3.0546,
+    rating:null, nrec:null,
+    punti:[
+      "Piccolo arcipelago di calette — Cala Barques, Cala Clara, Cala Molins — ai piedi delle falesie del Cavall Bernat",
+      "Acqua limpidissima e la vista di scogliere tra le più scenografiche del nord",
+      "Ristorantini e beach bar sulle cale: pranzo senza orologio",
+      "Il giorno dell'eclissi: auto parcheggiata al mattino presto e ferma fino a sera"
+    ],
+    foto:[]
+  },
+  puigaguila:{
+    nome:"Puig de l'Àguila (208 m)", lat:39.929999, lng:3.051346,
+    rating:null, nrec:null, orari:"Salita ~1 h · ~200 m di dislivello · via Camí de ses Coves Blanques",
+    punti:[
+      "Il balcone dell'eclissi: dalla vetta la linea di vista a ovest-nord-ovest scavalca le falesie e finisce in mare aperto",
+      "Verificato col modello del terreno (app Horitzó 2026 di AstroMallorca): massimo pienamente visibile, il Sole tramonta in mare alle 20:48",
+      "La visibilità vale IN VETTA: dalla spiaggia e dal paese il rilievo copre il Sole",
+      "Sentiero: prima il comodo Camí de ses Coves Blanques (il 'camí dels presos'), poi un tratto più ripido segnato da ometti",
+      "Discesa al crepuscolo: frontali obbligatorie, scarpe chiuse, acqua e una felpa",
+      "Attenzione a non confondere con l'omonimo Puig de l'Àguila di Capdepera, a 60 km da qui"
+    ],
+    foto:[]
+  },
   porto:{
     nome:"Port de Palma · Estació Marítima", lat:39.55287, lng:2.62667,
     rating:4.2, nrec:59,
@@ -329,13 +353,13 @@ const GIORNI = [
    {ora:'20:30',nome:'Cena a Palma',lat:39.5696,lng:2.6502,nota:'Casco antiguo, cucina mallorquina.'},
    {ora:'22:30',luogo:'savinya',nota:'Base 2 · vigneti di Inca, tre notti. Maria è avvisata del nostro orario.',drive:'30 min'},
  ]},
- {id:'g5',data:'Mercoledì 12 agosto',titolo:'Il giorno dell’eclissi',zona:'Tramuntana',eclisse:true,mappa:true,colore:'#d63f4a',
-  partenza:{ora:'09:30',luogo:'savinya',nota:'Il giorno è questo. Si sale sulla Tramuntana con calma e largo anticipo.'},
+ {id:'g5',data:'Mercoledì 12 agosto',titolo:'Il giorno dell’eclissi',zona:'Cala Sant Vicenç',eclisse:true,mappa:true,colore:'#d63f4a',
+  partenza:{ora:'08:30',luogo:'savinya',nota:'Il giorno è questo. Rotta a nord: mezz’ora d’auto, poi la macchina non si tocca più fino a dopo l’eclissi.'},
   tappe:[
-   {ora:'10:00',luogo:'valldemossa',nota:'Il borgo di Chopin: coca de patata, caffè e stradine in pietra.',drive:'30 min da Inca'},
-   {ora:'13:30',luogo:'patro',nota:'Pranzo sulla scogliera di Cala Deià. Si parcheggia sopra e si scende a piedi. Bagno incluso.',badge:'PRENOTATO?',drive:'25 min'},
-   {ora:'17:30',luogo:'foradada',nota:'Posizionamento. Da qui in poi, il cielo fa tutto da solo.',badge:'ORA X',drive:'10 min'},
-   {ora:'21:15',nome:'Cena a Deià · informale',lat:39.7486,lng:2.6486,nota:'A dieci minuti dal mirador: si scende dalla falesia e si mangia lì, senza fretta e senza cambiarsi. La cena stellata da El Olivo è spostata a giovedì, quando ci arriveremo freschi di doccia.',drive:'10 min'},
+   {ora:'09:15',luogo:'calasantvicenc',nota:'Auto parcheggiata (presto: i posti finiscono) e giornata di mare tra Cala Barques, Cala Clara e Cala Molins. Pranzo senza orologio in una delle cale, pomeriggio pigro: le energie servono stasera.',drive:'30 min da Inca'},
+   {ora:'18:45',nome:'Salita · Camí de ses Coves Blanques',lat:39.9214,lng:3.0517,nota:'Scarpe chiuse, zaino con acqua, felpa e frontali, occhiali in tasca. Circa 200 m di dislivello, un’ora con calma: prima il camí dels presos, poi il sentiero a ometti.'},
+   {ora:'19:15',luogo:'puigaguila',nota:'In vetta per il primo contatto (19:37). Aperitivo da zaino durante la parziale: un’ora d’attesa con quella vista non è attesa, è preludio.',badge:'ORA X'},
+   {ora:'21:45',nome:'Cena a Pollença',lat:39.8771,lng:3.0163,nota:'Discesa con le frontali (~45 min) e tavolo tardi a Pollença o Port de Pollença. Da prenotare: quella sera tutta l’isola cenerà tardi.',drive:'15 min'},
  ]},
  {id:'g6',data:'Giovedì 13 agosto',titolo:'Il nord',zona:'Formentor · Muro',mappa:true,colore:'#2472c8',
   partenza:{ora:'07:55',luogo:'savinya',nota:'Partenza all’alba: la navetta del faro e la luce del mattino non aspettano.'},
@@ -361,12 +385,12 @@ const GIORNI = [
    ------------------------------------------------------------ */
 const CHECKLIST = [
  {gruppo:'Prenotazioni', nota:'Le mosse che decidono la missione.', voci:[
-   {id:'pren-patro', t:'Ca’s Patró March · pranzo mer 12', scad:'notte del 2 agosto',
-    n:'Le prenotazioni aprono online a mezzanotte esatta, 10 giorni prima. Sveglia puntata: è il tavolo più conteso dell’isola.'},
+   {id:'pren-patro', t:'Ca’s Patró March · pranzo, giorno da decidere', scad:'dopo il briefing',
+    n:'ATTENZIONE: il pranzo del 12 è saltato (l’eclissi si vede dal Puig de l’Àguila). NON prenotare per il 12. Le prenotazioni aprono online a mezzanotte esatta, 10 giorni prima del giorno scelto: deciso il nuovo giorno, sveglia puntata.'},
    {id:'pren-olivo', t:'El Olivo · cena gio 13, ore 20:30', scad:'al più presto',
     n:'Spostata dalla sera dell’eclissi: le cene sono servite solo fino alle 21:30 e il 12 saremmo arrivati all’ultimo minuto, col sale addosso. Il giovedì ci arriviamo freschi di doccia.'},
-   {id:'pren-deia', t:'Cena a Deià · sera dell’eclissi', scad:'entro luglio',
-    n:'Informale, a 10 minuti da Sa Foradada. Ma il 12 agosto Deià sarà presa d’assalto: senza tavolo prenotato non si mangia.'},
+   {id:'pren-deia', t:'Cena a Pollença · sera dell’eclissi, ~21:45', scad:'entro luglio',
+    n:'Dopo la discesa dal Puig de l’Àguila: tavolo tardi a Pollença o Port de Pollença. Quella sera tutta la zona cenerà tardi: senza prenotazione non si mangia.'},
    {id:'pren-seaclub', t:'Sea Club Cap Rocat · mar 11', scad:'entro luglio',
     n:'Day pass o tavolo: ad agosto senza prenotazione non si entra.'},
    {id:'pren-cattedrale', t:'Cattedrale di Palma · biglietti online', scad:'entro luglio',
@@ -380,7 +404,7 @@ const CHECKLIST = [
    {id:'buy-occhiali', t:'Occhiali eclissi ISO 12312-2 × 2', scad:'subito',
     n:'Certificazione obbligatoria per tutte le fasi parziali. Ad agosto saranno introvabili ovunque.'},
    {id:'buy-filtro', t:'Filtro solare per fotocamera',
-    n:'Senza filtro il sensore si rovina. Durante la totalità (1′36″) invece si guarda e si scatta a occhio nudo.'},
+    n:'Senza filtro il sensore si rovina. Durante la totalità (90″) invece si guarda e si scatta a occhio nudo.'},
    {id:'buy-scarpe', t:'Scarpe da scoglio',
     n:'Caló des Moro e s’Almunia sono rocce e gradini ripidi: i piedi ringraziano.'},
    {id:'buy-ombrellone', t:'Ombrellone per Es Trenc',
@@ -400,15 +424,17 @@ const CHECKLIST = [
    {id:'ver-meteo', t:'Meteo e nuvolosità · dal 5 agosto',
     n:'Se il 12 il cielo a ovest si annuvola, serve un piano B lungo la costa.'},
  ]},
- {gruppo:'Il giorno X', nota:'Mercoledì 12 agosto · totalità alle 20:31.', voci:[
-   {id:'x-arrivo', t:'A Sa Foradada entro le 17:30',
-    n:'Il parcheggio è piccolo e quel giorno mezza isola punta lì. Meglio tre ore d’attesa che perdere il posto.'},
-   {id:'x-kit', t:'Kit pronto: occhiali, acqua, felpa',
-    n:'Sulla falesia al tramonto rinfresca, e la temperatura crolla durante la totalità.'},
+ {gruppo:'Il giorno X', nota:'Mercoledì 12 agosto · totalità alle 20:30, dalla vetta del Puig de l’Àguila.', voci:[
+   {id:'x-arrivo', t:'Auto a Cala Sant Vicenç al mattino, in vetta entro le 19:15',
+    n:'Parcheggio conquistato presto e mai più mosso. Partenza a piedi 18:45, salita ~1 h: in cima per il primo contatto delle 19:37.'},
+   {id:'x-kit', t:'Kit pronto: occhiali, acqua, felpa, frontali',
+    n:'In vetta al tramonto rinfresca e la temperatura crolla durante la totalità. Le frontali sono per la discesa al crepuscolo: senza, non si scende.'},
    {id:'x-telefono', t:'Telefono carico e memoria libera',
-    n:'Primo contatto 19:38 · totalità 20:31 · ultimo contatto 20:49.'},
+    n:'Primo contatto 19:37 · totalità 20:30:19 → 20:31:49 · il Sole tramonta in mare, ancora eclissato, alle 20:48.'},
    {id:'x-guardare', t:'Durante la totalità: occhiali giù, e guardare',
-    n:'96 secondi. Nessuna foto vale quanto vederla davvero.'},
+    n:'90 secondi. Nessuna foto vale quanto vederla davvero.'},
+   {id:'x-vetta', t:'Verificare il punto in vetta con l’app Horitzó 2026',
+    n:'horitzo2026.com (AstroMallorca): coordinate 39.9300, 3.0513 → "màxim visible". La visibilità vale in vetta, non dalla spiaggia. E occhio all’omonimo Puig de l’Àguila di Capdepera: quello è a 60 km.'},
  ]},
  {gruppo:'Documenti', voci:[
    {id:'doc-identita', t:'Carta d’identità o passaporto'},

@@ -52,10 +52,11 @@ function righeTappe(g){
 const FASI = `
   <div class="fasi">
     <h3>Le fasi del sole nero</h3>
-    <div class="fase"><b>19:38</b><span>Primo contatto — occhiali su, la Luna morde il Sole</span></div>
-    <div class="fase tot"><b>20:31</b><span>TOTALITÀ — 1 min 36 sec di notte sul mare. Occhiali giù.</span></div>
-    <div class="fase"><b>20:49</b><span>Ultimo contatto — il Sole tramonta ancora eclissato</span></div>
-    <div class="avviso">Il Sole sarà a soli 2,7° sull’orizzonte ovest: serve mare aperto davanti, ed è esattamente ciò che Sa Foradada offre. Occhiali certificati ISO 12312-2 per tutte le fasi parziali.</div>
+    <div class="fase"><b>19:37</b><span>Primo contatto — occhiali su, la Luna morde il Sole</span></div>
+    <div class="fase tot"><b>20:30:19</b><span>TOTALITÀ — 90 secondi di notte sul mare. Occhiali giù.</span></div>
+    <div class="fase"><b>20:31:49</b><span>Fine totalità — occhiali su per le ultime fasi parziali</span></div>
+    <div class="fase"><b>20:48</b><span>Il Sole tramonta in mare, ancora eclissato</span></div>
+    <div class="avviso">Orari calcolati sulla vetta del Puig de l’Àguila (39.9300, 3.0513) con l’app Horitzó 2026 di AstroMallorca, che modella l’orizzonte reale del terreno: il massimo è pienamente visibile, con il Sole a 2,6° che scende fino al mare aperto. Vale in vetta — dalla spiaggia il rilievo lo copre. Occhiali certificati ISO 12312-2 per tutte le fasi parziali.</div>
   </div>`;
 
 document.getElementById('giorni').innerHTML = GIORNI.map(g=>`

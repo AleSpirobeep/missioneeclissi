@@ -4,7 +4,7 @@
    mappe Leaflet, scheda luogo, countdown.
    ============================================================ */
 
-const TARGET = new Date('2026-08-12T20:31:00+02:00').getTime();
+const TARGET = new Date('2026-08-12T20:30:19+02:00').getTime();
 
 const gmaps  = (lat,lng)=>`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
 const stelle = r=>{ const p=Math.round(r); return '★'.repeat(p)+'☆'.repeat(5-p); };
