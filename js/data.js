@@ -285,7 +285,7 @@ const LUOGHI = {
     foto:[]
   },
   puigaguila:{
-    nome:"Puig de l'Àguila (208 m)", lat:39.929999, lng:3.051346,
+    nome:"Luogo X", lat:39.929999, lng:3.051346,
     rating:null, nrec:null, orari:"Salita ~1 h · ~200 m di dislivello · via Camí de ses Coves Blanques",
     punti:[
       "Il balcone dell'eclissi: dalla vetta la linea di vista a ovest-nord-ovest scavalca le falesie e finisce in mare aperto",
